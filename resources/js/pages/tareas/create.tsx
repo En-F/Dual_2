@@ -3,7 +3,6 @@ import '../../../css/tarea.css';
 import { route } from 'ziggy-js';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 
 export default function Create() {
     const { data, setData, post, processing, errors, setError, clearErrors } =
@@ -45,6 +44,7 @@ export default function Create() {
             },
         ];
 
+        //Comprobamos que ningún campo está vacío
         camposObligatorios.forEach((campo) => {
             if (
                 campo.valor === null ||
@@ -61,6 +61,7 @@ export default function Create() {
 
         if (tieneErrores) return;
 
+        //Enviamos los datos a traves del cuerpo de la peticion usando FormData
         post(route('tareas.store'), { forceFormData: true });
     };
 

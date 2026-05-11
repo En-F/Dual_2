@@ -64,7 +64,7 @@ export default function Show({ tarea }) {
 
                     <div className="space-y-6">
                         <div className="rounded-3xl bg-gray-900 p-8 text-white shadow-2xl">
-                            <h3 className="border-b border-gray-700 text-lg font-bold text-black">
+                            <h3 className="border-b border-gray-700 text-lg font-bold">
                                 Detalles del Registro
                             </h3>
 

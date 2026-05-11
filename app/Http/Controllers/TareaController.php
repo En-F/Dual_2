@@ -26,6 +26,7 @@ class TareaController extends Controller
      */
     public function create()
     {
+        //Verificamos que el usuario que este logeado tiene permisos para llevar acabo la acción
         $this->authorize('create', Tarea::class);
 
         return inertia('tareas/create');
@@ -37,6 +38,7 @@ class TareaController extends Controller
     public function store(StoreTareaRequest $request)
     {
 
+        //Recogemos los datos que han sido validados en el StoreTareaRequest
         $datos = $request->validated();
 
         Tarea::create($datos);
