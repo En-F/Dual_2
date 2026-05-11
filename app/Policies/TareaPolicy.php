@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Tarea;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Auth;
 
 class TareaPolicy
 {
@@ -13,7 +14,7 @@ class TareaPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +22,7 @@ class TareaPolicy
      */
     public function view(User $user, Tarea $tarea): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +30,10 @@ class TareaPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        if (Auth::check()) {
+            return true;
+        }
+
     }
 
     /**
@@ -37,7 +41,10 @@ class TareaPolicy
      */
     public function update(User $user, Tarea $tarea): bool
     {
-        return false;
+        if (Auth::check()) {
+            return true;
+        }
+
     }
 
     /**
@@ -45,22 +52,11 @@ class TareaPolicy
      */
     public function delete(User $user, Tarea $tarea): bool
     {
+        if (Auth::check()) {
+            return true;
+        }
+
         return false;
     }
 
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Tarea $tarea): bool
-    {
-        return false;
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Tarea $tarea): bool
-    {
-        return false;
-    }
 }

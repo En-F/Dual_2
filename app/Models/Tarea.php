@@ -10,6 +10,6 @@ class Tarea extends Model
     /** @use HasFactory<\Database\Factories\TareaFactory> */
     use HasFactory;
 
-    protected $fillable =  ['titulo','descripcion','esta_completado','prioridad'];
+    protected $fillable =  ['titulo','descripcion','esta_completada','prioridad'];
 
 }

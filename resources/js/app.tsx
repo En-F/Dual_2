@@ -5,8 +5,12 @@ import { initializeTheme } from '@/hooks/use-appearance';
 import AppLayout from '@/layouts/app-layout';
 import AuthLayout from '@/layouts/auth-layout';
 import SettingsLayout from '@/layouts/settings/layout';
+import { Ziggy } from './ziggy';
+import { route as routeFn } from 'ziggy-js';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+window.Ziggy = Ziggy;
+window.route = routeFn as any;
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
@@ -31,6 +35,7 @@ createInertiaApp({
             </TooltipProvider>
         );
     },
+
     progress: {
         color: '#4B5563',
     },

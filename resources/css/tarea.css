@@ -1,0 +1,42 @@
+.completado {
+    background-color: green;
+    border-radius: 10px;
+    padding: 6px;
+    color: white;
+}
+
+.pendiente {
+    background-color: red;
+    border-radius: 10px;
+    padding: 6px;
+    color: black;
+}
+
+.crear-tarea {
+    text-align: left;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 6px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.eliminar {
+    background-color: red;
+}
+
+.eliminar:hover {
+    background-color: rgb(143, 0, 0);
+    cursor: pointer;
+}
+
+.edit {
+    background-color: blue;
+}
+
+.edit:hover {
+    background-color: rgb(0, 0, 100);
+    cursor: pointer;
+}

@@ -16,22 +16,22 @@ class TareaSeeder extends Seeder
     {
         $tareas = [
         [
-            'titulo' => 'Tarea 1',
+            'titulo' => 'Comer con los abuelos',
             'descripcion' => 'Descripción de la uno',
             'prioridad' => 'baja',
         ],
         [
-            'titulo' => 'Tarea 2',
+            'titulo' => 'Sacar al perro a pasear',
             'descripcion' => 'Descripción de la dos',
             'prioridad' => 'media',
         ],
         [
-            'titulo' => 'Tarea 3',
+            'titulo' => 'Hacer el TFG',
             'descripcion' => 'Descripción de la tres',
             'prioridad' => 'alta',
         ],
         [
-            'titulo' => 'Tarea 4',
+            'titulo' => 'Jugar videojuegos',
             'descripcion' => 'Descripción de la cuatro',
             'prioridad' => 'baja',
             'esta_completada' => false,

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreTareaRequest extends FormRequest
 {
@@ -12,6 +13,10 @@ class StoreTareaRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        if (Auth::check()) {
+            return true;
+        }
+
         return false;
     }
 
@@ -23,7 +28,10 @@ class StoreTareaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titulo' => ['required','string', 'regex:/^[a-zA-ZÀ-ÿ\s\'"]+$/u' ],
+            'descripcion' => ['required','max:255','string'],
+            'prioridad'=> ['required','string','in:baja,media,alta'],
+            'esta_completada' => ['required','boolean']
         ];
     }
 }
