@@ -186,7 +186,6 @@ export default function Create({ tarea }: Props) {
                         </div>
                     </div>
 
-                    {/* Botones de acción */}
                     <div className="flex items-center justify-end gap-4 border-t pt-4">
                         <Link
                             href={route('tareas.index')}

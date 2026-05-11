@@ -6,7 +6,6 @@ export default function Show({ tarea }) {
             <Head title={`Tarea: ${tarea.titulo}`} />
 
             <div className="mx-auto max-w-6xl">
-                {/* Navegación Superior */}
                 <div className="mb-8">
                     <Link
                         href={route('tareas.index')}
@@ -20,7 +19,6 @@ export default function Show({ tarea }) {
                 </div>
 
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                    {/* COLUMNA IZQUIERDA: Contenido Principal (Más ancha) */}
                     <div className="space-y-6 lg:col-span-2">
                         <div className="rounded-3xl border border-gray-100 bg-white p-10 shadow-sm">
                             <div className="mb-6 flex items-center gap-4">
